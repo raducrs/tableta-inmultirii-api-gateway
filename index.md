@@ -1,5 +1,7 @@
 ## Welcome to API Gateway for Tableta Inmultirii
 
+[Swagger UI](dist)
+
 [Swagger UI Preview](https://htmlpreview.github.io/?https://github.com/raducrs/tableta-inmultirii-api-gateway/blob/main/dist/index.html)
 
 # tableta-inmultirii-api-gateway
