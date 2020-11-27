@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/raducrs/tableta-inmultirii
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-[Swagger UI](https://github.com/raducrs/tableta-inmultirii-api-gateway/blob/main/dist/index.html)
+[Swagger UI Preview](https://htmlpreview.github.io/?https://github.com/raducrs/tableta-inmultirii-api-gateway/blob/main/dist/index.html)
 
 ### Markdown
 
