@@ -1,0 +1,1713 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2020-10-26T15:46:48Z",
+    "title": "TabletaInmultirii"
+  },
+  "host": "api.example.com",
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/auser/donations": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auser/donations/{donationId}/code/{activationCode}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "activationCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "donationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/blackboard": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/duser/{uid}/donations": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/DUserDonationsGet"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "DUserDonationPost",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DUserDonationPost"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feedback": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/puser/{pid}/donations/accepted": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/puser/{pid}/donations/location": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/DUserDonationsGet"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/puser/{pid}/donations/targeted": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/DUserDonationsGet"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/puser/{pid}/donations/{donationId}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "donationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/PUserDonationDetails"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "donationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "PUserStatusUpdate",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PUserStatusUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/PUserStatusUpdate"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "donationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "TI-CognitoAuthorizer": []
+          }
+        ]
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schools": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "If-None-Match",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "ETag": {
+                "type": "string"
+              }
+            }
+          },
+          "304": {
+            "description": "304 response",
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "ETag": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schools/datapoints/{json}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schools/latest": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "If-None-Match",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "ETag": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          },
+          "304": {
+            "description": "304 response",
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "ETag": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stats/gagdets": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "If-None-Match",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "ETag": {
+                "type": "string"
+              }
+            }
+          },
+          "304": {
+            "description": "304 response",
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "ETag": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Expose-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stats/{json}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "TI-CognitoAuthorizer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "x-amazon-apigateway-authtype": "cognito_user_pools"
+    }
+  },
+  "definitions": {
+    "PUserDonationDetails": {
+      "type": "object",
+      "properties": {
+        "lastContact": {
+          "type": "string"
+        },
+        "user": {
+          "title": "user",
+          "$ref": "#/definitions/PUserDonationDetailsUser"
+        }
+      },
+      "title": "DonationDetails"
+    },
+    "PUserDonationDetailsUser": {
+      "type": "object",
+      "properties": {
+        "registeredUser": {
+          "type": "boolean",
+          "title": "registeredUser"
+        },
+        "name": {
+          "type": "string",
+          "title": "name"
+        },
+        "email": {
+          "type": "string",
+          "title": "email"
+        },
+        "phone": {
+          "type": "string",
+          "title": "phone"
+        }
+      },
+      "title": "DonationUser"
+    },
+    "DUserDonationPost": {
+      "type": "object",
+      "properties": {
+        "gadget": {
+          "title": "gadget",
+          "$ref": "#/definitions/DUserDonationPostGadget"
+        },
+        "loc": {
+          "title": "loc",
+          "$ref": "#/definitions/DUserDonationPostLoc"
+        },
+        "user": {
+          "title": "user",
+          "$ref": "#/definitions/DUserDonationPostUser"
+        }
+      },
+      "title": "Donation"
+    },
+    "DUserDonationsGetDonationsItemLoc": {
+      "type": "object",
+      "required": [
+        "address",
+        "category",
+        "locationId",
+        "name"
+      ],
+      "properties": {
+        "locationId": {
+          "type": "string",
+          "title": "locationId"
+        },
+        "name": {
+          "type": "string",
+          "title": "name"
+        },
+        "category": {
+          "type": "number",
+          "title": "category"
+        },
+        "address": {
+          "type": "string",
+          "title": "address"
+        }
+      },
+      "title": "LocationPacked"
+    },
+    "DUserDonationPostGadget": {
+      "type": "object",
+      "required": [
+        "gadgetType",
+        "laptop",
+        "phone",
+        "tablet"
+      ],
+      "properties": {
+        "gadgetType": {
+          "type": "string",
+          "title": "gadgetType"
+        },
+        "laptop": {
+          "title": "laptop",
+          "$ref": "#/definitions/DUserDonationPostGadgetLaptop"
+        },
+        "tablet": {
+          "title": "tablet",
+          "$ref": "#/definitions/DUserDonationPostGadgetTablet"
+        },
+        "phone": {
+          "title": "phone",
+          "$ref": "#/definitions/DUserDonationPostGadgetPhone"
+        }
+      },
+      "title": "Gadgets"
+    },
+    "DUserDonationPostGadgetTablet": {
+      "type": "object",
+      "required": [
+        "access",
+        "clean",
+        "functional",
+        "make",
+        "model",
+        "screen",
+        "year"
+      ],
+      "properties": {
+        "screen": {
+          "type": "string",
+          "title": "screen"
+        },
+        "model": {
+          "type": "string",
+          "title": "model"
+        },
+        "make": {
+          "type": "string",
+          "title": "make"
+        },
+        "year": {
+          "type": "string",
+          "title": "year"
+        },
+        "functional": {
+          "type": "boolean",
+          "title": "functional"
+        },
+        "clean": {
+          "type": "boolean",
+          "title": "clean"
+        },
+        "access": {
+          "type": "boolean",
+          "title": "access"
+        }
+      },
+      "title": "Tablet"
+    },
+    "DUserDonationPostLoc": {
+      "type": "object",
+      "required": [
+        "address",
+        "category",
+        "locationId",
+        "name"
+      ],
+      "properties": {
+        "locationId": {
+          "type": "string",
+          "title": "locationId"
+        },
+        "name": {
+          "type": "string",
+          "title": "name"
+        },
+        "category": {
+          "type": "number",
+          "title": "category"
+        },
+        "address": {
+          "type": "string",
+          "title": "address"
+        }
+      },
+      "title": "LocationPacked"
+    },
+    "DUserDonationsGetDonationsItemGadgetLaptop": {
+      "type": "object",
+      "required": [
+        "access",
+        "clean",
+        "functional",
+        "make",
+        "memory",
+        "model",
+        "processor",
+        "screen",
+        "year"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "title": "model"
+        },
+        "make": {
+          "type": "string",
+          "title": "make"
+        },
+        "year": {
+          "type": "string",
+          "title": "year"
+        },
+        "functional": {
+          "type": "boolean",
+          "title": "functional"
+        },
+        "clean": {
+          "type": "boolean",
+          "title": "clean"
+        },
+        "access": {
+          "type": "boolean",
+          "title": "access"
+        },
+        "screen": {
+          "type": "string",
+          "title": "screen"
+        },
+        "memory": {
+          "type": "string",
+          "title": "memory"
+        },
+        "processor": {
+          "type": "string",
+          "title": "processor"
+        }
+      },
+      "title": "Laptop"
+    },
+    "PUserStatusUpdate": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "StatusUpdate"
+    },
+    "DUserDonationPostGadgetPhone": {
+      "type": "object",
+      "required": [
+        "access",
+        "clean",
+        "functional",
+        "make",
+        "model",
+        "screen",
+        "year"
+      ],
+      "properties": {
+        "screen": {
+          "type": "string",
+          "title": "screen"
+        },
+        "model": {
+          "type": "string",
+          "title": "model"
+        },
+        "make": {
+          "type": "string",
+          "title": "make"
+        },
+        "year": {
+          "type": "string",
+          "title": "year"
+        },
+        "functional": {
+          "type": "boolean",
+          "title": "functional"
+        },
+        "clean": {
+          "type": "boolean",
+          "title": "clean"
+        },
+        "access": {
+          "type": "boolean",
+          "title": "access"
+        }
+      },
+      "title": "Phone"
+    },
+    "Empty": {
+      "type": "object",
+      "title": "Empty Schema"
+    },
+    "DUserDonationsGetDonationsItemGadget": {
+      "type": "object",
+      "required": [
+        "gadgetType",
+        "laptop",
+        "phone",
+        "tablet"
+      ],
+      "properties": {
+        "gadgetType": {
+          "type": "string",
+          "title": "gadgetType"
+        },
+        "laptop": {
+          "title": "laptop",
+          "$ref": "#/definitions/DUserDonationsGetDonationsItemGadgetLaptop"
+        },
+        "tablet": {
+          "title": "tablet",
+          "$ref": "#/definitions/DUserDonationsGetDonationsItemGadgetTablet"
+        },
+        "phone": {
+          "title": "phone",
+          "$ref": "#/definitions/DUserDonationsGetDonationsItemGadgetPhone"
+        }
+      },
+      "title": "Gadgets"
+    },
+    "DUserDonationsGet": {
+      "type": "object",
+      "properties": {
+        "donations": {
+          "type": "array",
+          "title": "donations",
+          "items": {
+            "$ref": "#/definitions/DUserDonationsGetDonationsItem"
+          }
+        }
+      },
+      "title": "DuserDonations"
+    },
+    "DUserDonationsGetDonationsItemGadgetPhone": {
+      "type": "object",
+      "required": [
+        "access",
+        "clean",
+        "functional",
+        "make",
+        "model",
+        "screen",
+        "year"
+      ],
+      "properties": {
+        "screen": {
+          "type": "string",
+          "title": "screen"
+        },
+        "model": {
+          "type": "string",
+          "title": "model"
+        },
+        "make": {
+          "type": "string",
+          "title": "make"
+        },
+        "year": {
+          "type": "string",
+          "title": "year"
+        },
+        "functional": {
+          "type": "boolean",
+          "title": "functional"
+        },
+        "clean": {
+          "type": "boolean",
+          "title": "clean"
+        },
+        "access": {
+          "type": "boolean",
+          "title": "access"
+        }
+      },
+      "title": "Phone"
+    },
+    "DUserDonationPostUser": {
+      "type": "object",
+      "required": [
+        "email",
+        "name",
+        "phone",
+        "registeredUser"
+      ],
+      "properties": {
+        "registeredUser": {
+          "type": "boolean",
+          "title": "registeredUser"
+        },
+        "name": {
+          "type": "string",
+          "title": "name"
+        },
+        "email": {
+          "type": "string",
+          "title": "email"
+        },
+        "phone": {
+          "type": "string",
+          "title": "phone"
+        }
+      },
+      "title": "DonationUser"
+    },
+    "DUserDonationsGetDonationsItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "id"
+        },
+        "status": {
+          "type": "string",
+          "title": "status"
+        },
+        "gadget": {
+          "title": "gadget",
+          "$ref": "#/definitions/DUserDonationsGetDonationsItemGadget"
+        },
+        "loc": {
+          "title": "loc",
+          "$ref": "#/definitions/DUserDonationsGetDonationsItemLoc"
+        }
+      },
+      "title": "DuserDonation"
+    },
+    "DUserDonationsGetDonationsItemGadgetTablet": {
+      "type": "object",
+      "required": [
+        "access",
+        "clean",
+        "functional",
+        "make",
+        "model",
+        "screen",
+        "year"
+      ],
+      "properties": {
+        "screen": {
+          "type": "string",
+          "title": "screen"
+        },
+        "model": {
+          "type": "string",
+          "title": "model"
+        },
+        "make": {
+          "type": "string",
+          "title": "make"
+        },
+        "year": {
+          "type": "string",
+          "title": "year"
+        },
+        "functional": {
+          "type": "boolean",
+          "title": "functional"
+        },
+        "clean": {
+          "type": "boolean",
+          "title": "clean"
+        },
+        "access": {
+          "type": "boolean",
+          "title": "access"
+        }
+      },
+      "title": "Tablet"
+    },
+    "DUserDonationPostGadgetLaptop": {
+      "type": "object",
+      "required": [
+        "access",
+        "clean",
+        "functional",
+        "make",
+        "memory",
+        "model",
+        "processor",
+        "screen",
+        "year"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "title": "model"
+        },
+        "make": {
+          "type": "string",
+          "title": "make"
+        },
+        "year": {
+          "type": "string",
+          "title": "year"
+        },
+        "functional": {
+          "type": "boolean",
+          "title": "functional"
+        },
+        "clean": {
+          "type": "boolean",
+          "title": "clean"
+        },
+        "access": {
+          "type": "boolean",
+          "title": "access"
+        },
+        "screen": {
+          "type": "string",
+          "title": "screen"
+        },
+        "memory": {
+          "type": "string",
+          "title": "memory"
+        },
+        "processor": {
+          "type": "string",
+          "title": "processor"
+        }
+      },
+      "title": "Laptop"
+    }
+  }
+}

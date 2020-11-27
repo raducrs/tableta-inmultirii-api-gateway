@@ -1,39 +1,91 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/raducrs/tableta-inmultirii-api-gateway/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Welcome to API Gateway for Tableta Inmultirii
 
 [Swagger UI Preview](https://htmlpreview.github.io/?https://github.com/raducrs/tableta-inmultirii-api-gateway/blob/main/dist/index.html)
 
-### Markdown
+# tableta-inmultirii-api-gateway
+API Gateway for Tableta Inmultirii
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Contents 
 
-```markdown
-Syntax highlighted code block
+- [Swagger UI live demo](https://raducrs.github.io/tableta-inmultirii-api-gateway/dist/index.html)
+- [Swagger Definition](TabletaInmultirii-prod-swagger.json)
+- [Swagger Definition + API Gateway Extensions](TabletaInmultirii-prod-swagger-apigateway.yaml)
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+## How to import Swagger Definition + API Gateway Extensions
 
-1. Numbered
-2. List
+Replace in `TabletaInmultirii-prod-swagger-apigateway.yaml` the definitions
 
-**Bold** and _Italic_ and `Code` text
+- `arn:aws:apigateway:<region-apigateway>:lambda:path/2015-03-31/functions/arn:aws:lambda:<region-lambda>:<account-id>:function:`
+   This are the lambda integration points
+   
+- `<ec2-hostname>:<port>` and `<Api-Key>` 
+   This are the Spring backend integrations
+   
+- `<cognito-user-pool-authorizer-arn>` 
+   This is the authorizer definitions
+   
+- `<S3-access-role>` and `<s3-public-bucket>`
+   This is the S3 bucket integration
+   
+## Integration
 
-[Link](url) and ![Image](src)
+All lambda integration points are defined in a separate repo
+
+The Spring backend is defined in a separate repo
+
+## Paths:
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/raducrs/tableta-inmultirii-api-gateway/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+/auser/donations:
+    POST:
+        Lambda TI-AUser-DonationPost
+  /{donationId}/code/{activationCode}:
+    GET:
+        Lambda TI-AUser-ConfirmationGet
+/blackboard:
+    GET:
+        Lambda TI-UploadGetSignedUrl
+/duser/{uid}/donations:
+    GET:
+        Lambda TI-DUser-GetDonations
+    POST:
+        Lambda TI-DUser-PostDonations
+/feedback:
+    POST:
+        Lambda TI-SlackAlert
+/puser/{pid}/donations
+  /accepted:
+    GET:
+        Lambda TI-PUser-AcceptedGet
+    POST:
+        Lambda  TI-PUser-AcceptedPost
+  /location:
+    GET:
+        Lambda TI-PUser-LocationGet
+  /targeted:
+    GET
+        Lambda TI-PUser-TargetedGet
+  /{donationId}:
+    GET:
+      Lambda TI-PUser-DetailsGet
+    PUT:
+      Lambda TI-PUser-StatusPut
+    DELETE:
+      Lambda TI-PUser-DonationDelete
+/schools:
+    GET:
+	  Spring -> /schools/datapoints/history
+  /datapoints/{json}:
+    GET:
+        S3 -> {bucket}/schools/datapoints/{object}
+  /latest:
+    GET:
+       Spring -> /schools/datapoints/latest
+/stats
+  /gagdets:
+    GET:
+        Spring ->/stats/gadgets
+  /{json}:
+    GET:
+        S3 -> /{bucket}/stats/{object}"
+```
