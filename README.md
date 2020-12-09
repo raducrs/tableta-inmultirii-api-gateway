@@ -26,9 +26,9 @@ Replace in `TabletaInmultirii-prod-swagger-apigateway.yaml` the definitions
    
 ## Integration
 
-All lambda integration points are defined in a separate repo
+All lambda integration points are defined in a separate repo [raducrs/tableta-inmultirii-aws-lambda](https://github.com/raducrs/tableta-inmultirii-aws-lambda)
 
-The Spring backend is defined in a separate repo
+The Spring backend is defined in a separate repo [raducrs/tableta-inmultirii-spring-backend](https://github.com/raducrs/tableta-inmultirii-spring-backend)
 
 ## Paths:
 ```
